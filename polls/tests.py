@@ -1,7 +1,7 @@
 from django.test import TestCase
 import datetime
 from django.utils import timezone
-from polls.models import Question
+from .models import Question
 from django.core.urlresolvers import reverse
 # Create your tests here.
 class QuestionMethodTests(TestCase):
