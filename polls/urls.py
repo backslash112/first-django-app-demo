@@ -1,13 +1,14 @@
 from django.conf.urls import url, include
 from . import views
-from .api import EntryResource, QuestionResource
-from tastypie.api import Api
+# from polls.api.resources import EntryResource, UserResource
+# from tastypie.api import Api
+# from .api.resources import EntryResource, UserResource
 
-
+"""
 v1_api = Api(api_name='v1')
-v1_api.register(QuestionResource())
+v1_api.register(UserResource())
 v1_api.register(EntryResource())
-
+"""
 urlpatterns = [
     # ex: /polls/
     # url(r'^$', views.index, name='index'),
@@ -23,7 +24,9 @@ urlpatterns = [
     url(r'^(?P<pk>[0-9]+)/results/$', views.ResultView.as_view(), name='results'),
     url(r'^(?P<question_id>[0-9]+)/vote/$', views.vote, name='vote'),
 
+    """
     url(r'^blog/', include('polls.urls')),
     # ex: http://127.0.0.1:8000/polls/api/v1/question/?format=json
     url(r'^api/', include(v1_api.urls)),
+    """
 ]
